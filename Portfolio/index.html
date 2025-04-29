@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Portfolio</title>
+
+<style>
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #1a1a1a;
+  color: white;
+  padding: 15px 0;
+  z-index: 1000;
+}
+
+.navbar ul {
+  list-style: none;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar li {
+  display: inline;
+  margin: 0 20px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.navbar a:hover {
+  color: #ffcc00;
+}
+
+.spacer {
+  height: 60px;
+}
+
+/* Image Centering, Filter & Rounded Corners */
+.image-section {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.filtered-img {
+  width: 300px;
+  filter: grayscale(60%);
+  border-radius: 15px;
+}
+
+/* Table Styling */
+.table-section table {
+  margin: 30px auto;
+  border-collapse: collapse;
+  width: 60%;
+}
+
+.table-section th,
+.table-section td {
+  border: 1px solid #555;
+  padding: 12px;
+  text-align: center;
+}
+
+.table-section thead {
+  background-color: #333;
+  color: white;
+}
+
+/* Text Over Image */
+.overlay-image {
+  position: relative;
+  text-align: center;
+  margin: 40px 0;
+}
+
+.overlay-image img {
+  width: 100%;
+  height: auto;
+}
+
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  text-shadow: 1px 1px 5px black;
+}
+
+/* Two Column Layout */
+.columns {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px;
+}
+
+.column {
+  width: 45%;
+  height: 150px;
+  background-color: #f2f2f2;
+  color: #333;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Paragraph Hover Effect */
+.hover-para {
+  text-align: center;
+  font-size: 1.2rem;
+  margin: 20px;
+  transition: color 0.3s ease;
+}
+
+.hover-para:hover {
+  color: #007BFF;
+}
+
+/* Image Overlay Fade */
+.image-fade-container {
+  position: relative;
+  width: 300px;
+  margin: auto;
+}
+
+.image-fade-container img {
+  width: 100%;
+  display: block;
+}
+
+.fade-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  color: white;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.5s ease;
+}
+
+.image-fade-container:hover .fade-overlay {
+  opacity: 1;
+}
+
+/* Video Section */
+.video-section video,
+.video-text-overlay video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Video Text Overlay */
+.video-text-overlay {
+  position: relative;
+  text-align: center;
+}
+
+.video-text-overlay .video-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 8px black;
+}
+
+/* Footer Styling */
+footer {
+  background-color: #222;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-weight: bold;
+}
+
+</style>
+</head>
+<body>
+
+  <!-- Fixed Navbar -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+    </ul>
+  </nav>
+
+  <div id="home" class="spacer"></div>
+
+  <section class="image-section">
+    <img src="https://cdn.pixabay.com/photo/2023/12/27/11/52/woman-8471932_1280.jpg" alt="Portfolio" class="filtered-img" />
+  </section>
+
+  <!-- Table Section -->
+  <section id="about" class="table-section">
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Skill</th>
+          <th>Level</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>HTML</td>
+          <td>Web</td>
+          <td>Advanced</td>
+        </tr>
+        <tr>
+          <td>CSS and Bootstrap</td>
+          <td>Styling Web</td>
+          <td>Advanced</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Text Over Image -->
+  <section id="portfolio" class="overlay-image">
+    <img src="https://cdn.pixabay.com/photo/2023/04/13/17/49/dare-7923106_1280.jpg" alt="Overlay" />
+    <div class="overlay-text">Creative Developer</div>
+  </section>
+
+  <!-- Two-column Layout -->
+  <section class="columns">
+    <div class="column left">Left Column</div>
+    <div class="column right">Right Column</div>
+  </section>
+
+  <!-- Paragraph with Hover Effect -->
+  <section>
+    <p class="hover-para">Hover over this text to see the effect!</p>
+  </section>
+
+  <!-- Image Overlay Fade -->
+  <section class="image-fade-section">
+    <div class="image-fade-container">
+      <img src="https://cdn.pixabay.com/photo/2023/11/01/11/42/coast-8357312_1280.jpg" alt="Fade Image" />
+      <div class="fade-overlay">Hello World</div>
+    </div>
+  </section>
+
+
+  <!-- Video with Text Overlay -->
+  <section class="video-text-overlay">
+    <video src="https://cdn.pixabay.com/video/2023/12/05/192066-891655462_large.mp4" autoplay muted loop playsinline></video>
+    <div class="video-text">Welcome to My Work</div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 My Portfolio Web Site</p>
+  </footer>
+
+</body>
+</html>
